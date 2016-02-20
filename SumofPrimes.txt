@@ -1,0 +1,26 @@
+Sum of Primes
+Write a program that checks whether a number of the sum of exactly two prime numbers.
+
+Input 
+The first line of the input will be the number of test cases
+Each following line will have a number to check. less than or equal to 10^40.
+
+Output
+For each case output a line saying whether the input is a sum of two primes.
+
+Example
+5 + 7 = 12 
+
+
+Sample Input
+4
+17
+18
+19
+20
+
+Sample output
+17 is impossible
+18 = 5 + 13
+19 = 2 + 17
+20 = 3 + 17
