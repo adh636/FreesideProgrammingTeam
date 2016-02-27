@@ -18,14 +18,20 @@ public class SumOfPrimes {
 		System.out.println(endTime2-startTime2);
 	}
 	
-	// return first set of primes
+	// return first set of primes that sum to the input number
 	public static String sumOfPrimes(int num) {
+		// checks if num-2 is prime, since 2 is the only even prime (that we know of...)
 		if (isPrime(num - 2)) {
 			return num + " = 2 + " + (num - 2);
 		}
+		
+		// tests if num is odd.  if num is odd, it can't be the sum of 2 odd numbers
 		else if (num % 2 != 0) {
 			return num + " is impossible";
 		}
+		
+		// tests each odd number in ascending order starting at 3 
+		// to see if i and the difference between num and i are prime
 		for (int i = 3; i < (num/2); i += 2) {
 			if (isPrime(i)) {
 				if (isPrime(num - i)) {
@@ -33,6 +39,7 @@ public class SumOfPrimes {
 				}
 			}
 		}
+		
 		return num + " is impossible";
 	}
 	
@@ -47,6 +54,7 @@ public class SumOfPrimes {
 	}
 	
 	// return 2 primes with the largest product
+	// same as sumOfPrimes except for loop starts at num/2 and decreases instead of 3 and increasing
 	public static String sumOfPrimes2(int num) {
 		if (isPrime(num - 2)) {
 			return num + " = 2 + " + (num - 2);
