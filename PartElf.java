@@ -25,20 +25,25 @@ public class PartElf {
         return greatestCommonDenominator(b, a % b);
     }
 
+    // returns the minimum number of generations needed to go back to find a 100% elf relative
     static void minGenerations(String input) {
     	String[] pq = input.split("/");
     	int p = Integer.parseInt(pq[0]);
     	int q = Integer.parseInt(pq[1]);
         int gcd = greatestCommonDenominator(p, q);
+        // reduce the part elf fraction
         p /= gcd;
         q /= gcd;
         
         int result = 0;
+
+        // double p until full elf relative is found
         while (q > p) {
 			p *= 2;
 			result++;
 		}
         
+        // determine if full elf relative exists in past 40 generations
         if (p * Math.min(2, 40) % q == 0) {
         	System.out.println("Case #" + counter + ": " + result);
         }
