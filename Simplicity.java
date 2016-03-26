@@ -20,11 +20,14 @@ public class Simplicity {
 		}
 		*/
 		
-		String test = "uncopyrightable";
-		initializeHashMap(test);
+		printSimplified("uncopyrightable");
+	}
+	
+	public static void printSimplified(String input) {
+		initializeHashMap(input);
 		removeLargest(numChars);
 		removeLargest(numChars);
-		System.out.println(test + ": " + getOutput(numChars));
+		System.out.println(input + ": " + getOutput(numChars));
 	}
 	
 	public static void initializeHashMap(String input) {
